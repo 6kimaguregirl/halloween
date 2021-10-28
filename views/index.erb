@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>投票特設サイト|金曜日ハロウィン企画</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/fonts/LittleDevil.ttf">
+  <!--<link rel="stylesheet" href="/assets/css/bootstrap.min.css">-->
+  <link rel="stylesheet" href="/assets/css/count.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <main>
+    <section class="top-title">
+      <img src="/assets/img/moon.png" class="img img-moon">
+      <img src="/assets/img/bat-s.png" class="img img-bat-s">
+      <img src="/assets/img/bat-m.png" class="img img-bat-m">
+      <img src="/assets/img/bat-l.png" class="img img-bat-l">
+      <div class="title">
+        <h1>Life is Tech Friday School</h1>
+        <h1>HAPPY HALLOWEEN</h1>
+      </div>
+    </section>
+    <section class="intro">
+      <div class="img-text">
+        <img src="/assets/img/text1.png" class="img img-text1">
+        <img src="/assets/img/text2.png" class="img img-text2">
+        <img src="/assets/img/text3.png" class="img img-text3">
+      </div>
+      <img src="/assets/img/witch.png" class="img img-witch">
+    </section>
+    <section class="castle">
+      <img src="/assets/img/castle.png" class="img img-castle">
+    </section>
+    <section class="mentors">
+      <div class="title">
+        <h2>MENTOR COSTUME</h2>
+        <img src="/assets/img/bat-s.png" class="img img-bat-s">
+      </div>
+      <div class="flex">
+        <% @mentors.each do |mentor| %>
+        <% @mentorphotos.each do |mentorphoto| %>
+        <div class="mentor">
+          <div class="mentor-image">
+            <!--<img src="/assets/img/<%= mentorphoto %>" class="frame">-->
+            <div class="no-image">
+              <p>coming soon</p>
+            </div>
+            <!--リダイレクトさせないためにinputタグを消した-->
+          </div>
+          <div class="mentor-name">
+            <h3><%= mentor %></h3>
+          </div>
+          <div>
+            <input type="text" style="display:none;"></input>
+            <button class="plus_button" data-name=<%= mentor %>>
+              <div class="iine-count">
+                <p>
+                  <span class="count" data-name=<%= mentor %>>
+                    <%=@number.find_by(name: mentor).number%>
+                  </span>
+                </p>
+              </div>
+              <div class="iine">
+                <h3>いいね</h3>
+              </div>
+            </button>
+          </div>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  </main>
+<footer>
+  <div class="footer-1"></div>
+  <div class="footer-2">
+    <p>SHIROKANETAKANAWA FRIDAY SCHOOL</p>
+  </div>
+</footer>
+<script>
+//非同期処理のところ
+  $(document).on("click", ".plus_button", function(){
+      var name = $(this).data("name");
+
+        $.ajax({
+            url: "/" + name + "/plus",
+            method: "POST",
+            success: function(n) {
+               $(".count[data-name="+name+"]").text(n);
+            }
+        });
+    });
+</script>
+</body>
+</html>

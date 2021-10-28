@@ -1,0 +1,215 @@
+@font-face{
+    font-family:'myfont';
+    src: url(../fonts/LittleDevil.ttf) format('truetype');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    width: 100%;
+    color:#fff;
+    text-align: center;
+    font-family:myfont,'Zen Old Mincho',sans-serif;
+    background:linear-gradient(to bottom, #000 0%, #480942 50%, #6F0E41 60%, #A73036 75%, #E15D1C 100%);
+}
+
+.flex{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+
+.title{
+    text-align: center;
+}
+
+.top-title{
+    text-align: center;
+    height: 500px;
+    line-height: 120px;
+    position: relative;
+}
+
+.top-title img{
+    position: absolute;
+}
+
+.img-moon{
+    width:250px;
+    right: 20%;
+    top: 20%;
+}
+
+.img-bat-s{
+    width:80px;
+    left: 10%;
+    top: 55%;
+}
+
+.img-bat-m{
+    width:100px;
+    left: 15%;
+    top: 35%;
+}
+
+.img-bat-l{
+    width:180px;
+    right: 15%;
+    top: 25%;
+}
+
+.top-title .title{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+}
+
+.top-title h1:first-child{
+    font-size: 50px;
+}
+
+.top-title h1:last-child{
+    font-size: 100px;
+    white-space: nowrap;
+}
+
+.intro{
+    height: 200px;
+    position: relative;
+}
+
+.img-text img{
+    width: 300px;
+}
+
+.img-text1{
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    /*transform:rotate(-10deg);*/
+}
+
+.img-text2{
+    position: absolute;
+    top: 15%;
+    left: 27%;
+    /*transform:rotate(10deg);*/
+}
+
+.img-text3{
+    position: absolute;
+    top: 60%;
+    left: 20%;
+}
+
+.img-witch{
+    position: absolute;
+    top: 60%;
+    right: 25%;
+    transform:translate(0%,-50%);
+    width:250px;
+}
+
+.castle{
+    height: 400px;
+    position: relative;
+}
+
+.img-castle{
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+}
+
+.mentors .title{
+    font-size: 24px;
+    padding: 100px 0px 50px;
+    position: relative;
+}
+
+.mentors .title .img-bat-s{
+    position: absolute;
+    top: 25%;
+    left: 60%;
+}
+
+.mentors .flex{
+    width: 1020px;
+    margin: 0 auto;
+}
+
+.mentor{
+    margin: 30px;
+}
+
+.no-image{
+    width: 240px;
+    height: 180px;
+    background-color: #fff;
+    color:#000;
+}
+
+.no-image p{
+    font-size: 18px;
+    line-height: 180px;
+    transform:rotate(-3deg);
+}
+
+.mentor-name{
+    margin: 10px 0px;
+    font-family:'Zen Old Mincho';
+}
+
+.plus_button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+    margin:10px auto ;
+}
+
+.iine-count{
+    color:#fff;
+    border:0.5px solid #000;
+    width: 36px;
+    height: 30px;
+    line-height: 30px;
+    font-family:'Zen Old Mincho';
+}
+
+.iine{
+    background:linear-gradient(-45deg,#000000,#490945);
+    color:#fff;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    font-family:'Zen Old Mincho';
+}
+
+.footer-1{
+    background-image:url(../img/footer-img.png);
+    background-size:cover;
+    height:200px;
+}
+
+.footer-2{
+    background-color:#000;
+    height:60px;
+    line-height: 60px;
+    color:#fff;
+    text-align: center;
+}
