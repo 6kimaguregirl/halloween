@@ -36,3 +36,12 @@ post '/:name/plus' do
   # 返された値をjqueryで処理
   count.number.to_s
 end
+
+get '/resetall' do
+  counts = Count.all
+  counts.each do |c|
+    c.number = 0
+    c.save
+  end
+  redirect "/"
+end
